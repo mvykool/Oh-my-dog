@@ -1,14 +1,18 @@
 ---
-
+import MenuMobile from "./MenuMobile";
 ---
 
-
-
-
-<header>
+<nav class="flex justify-between items-center px-3">
     <div class="flex space-x-2 items-center">
         <img src="/logo.png" alt="logo" class="h-7 w-7">
         <p class="text-sm mt-3">Oh My Dog</p>
     </div>
 
-</header>
+        <!-- menu mobile -->
+<div class="md:hidden">  
+    <MenuMobile client:load/>
+</div>
+
+
+</nav>
+
