@@ -10,3 +10,7 @@ hmlt, body{
     font-family: 'Rubik', sans-serif;
 }
 
+.bg-wrapper{
+    background-color: rgba(0,0,0, 0.3);
+    backdrop-filter: blur(2px);
+}
