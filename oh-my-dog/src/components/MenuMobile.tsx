@@ -9,7 +9,7 @@ const MenuMobile = () => {
   return (
     <div>
       <button onClick={() => setMenu(true)}>
-        <TfiMenu className='h-5 w-5 mt-3'/>
+        <TfiMenu className='h-5 w-5 mt-3 text-[var(--darker)]'/>
       </button>
      
 
