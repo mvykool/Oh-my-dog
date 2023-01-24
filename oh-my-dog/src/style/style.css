@@ -3,11 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/*color palette*/
+
+
+:root{
+    --main: #f8ede3;
+    --primary:#dfd3c3;
+    --secondary: #d0b8a8;
+    --dark:#85586f;
+}
 
 hmlt, body{
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    background-color: var(--main);
 }
 
 .bg-wrapper{
