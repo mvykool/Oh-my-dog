@@ -1,6 +1,7 @@
 ---
 import Cards from '../components/Cards.astro';
 import FlipCard from '../components/FlipCard.astro';
+import Plans from '../components/Plans.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -24,6 +25,7 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	  </section>
 
+	</main>
 	  <!-- services section -->
 
 	  <section class=" mx-10 relative mb-10 pb-10 flex-col justify-center mt-36 bg-[var(--secondary)] rounded-lg">
@@ -40,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
 
 	 <section class="my-20 flex flex-col justify-center mx-10">
 		<div class="flex flex-col mx-8 mt-14">
-			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 text-center border-[var(--primary)] border-b-2">A Little Bit About Us</h1>
+			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2">A Little Bit About Us</h1>
 			
 			<p class="my-5 text-sm text-[var(--dark)] ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim maiores eos cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum quam tempore blanditiis accusantium laboriosam cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum .</p>
 		</div>
@@ -82,6 +84,16 @@ import Layout from '../layouts/Layout.astro';
 		 
 	  </section>
 
-	</main>
+
+	  <!--plans -->
+	  <section class=" mx-10 relative mb-10 pb-10 flex-col justify-center mt-36">
+		<div class="flex flex-col">
+			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2">Select One Of Our Plans</h1>
+		</div>
+            
+		 <Plans/>
+		 
+	  </section>
+
 </Layout>
 
