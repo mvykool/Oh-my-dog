@@ -146,3 +146,20 @@ hmlt, body{
   opacity: 1;
   filter: blur(0);
 }
+
+.menu{
+  animation: menuMove 3s ease-in-out ;
+  transition: all .5s ease-in-out;
+}
+
+@keyframes menuMove {
+  0%{
+    transform: translateX(100px);
+    opacity: 0.2;
+  }
+
+  10%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

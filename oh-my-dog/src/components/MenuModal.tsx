@@ -10,12 +10,13 @@ interface Props{
 
 const MenuModal = ({setMenu, menu}: Props) => {
 
+
   return (
     <>
     <div className='fixed w-full bg-wrapper z-[20] top-0 left-0 h-screen' onClick={() => setMenu(false)} /> 
      
         <div
-        className=' bg-[var(--secondary)] scrollLock right-0 z-50 h-[100vh] top-0 w-60 fixed'>
+        className=' bg-[var(--secondary)] scrollLock right-0 z-50 h-[100vh] top-0 w-60 fixed menu'>
         
         <div className='flex justify-center pt-8'>
         <img src="/hero.png" alt="logo" className='h-28 w-28' />
