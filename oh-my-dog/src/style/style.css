@@ -26,6 +26,18 @@ hmlt, body{
     backdrop-filter: blur(2px);
 }
 
+/* lock scrolling */
+
+
+.overflowHidden {
+  overflow: hidden;
+  margin: 0;
+  touch-action: none;
+  -ms-touch-action: none;
+  height: 100%;
+}
+
+
 /*fild card section*/
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -85,7 +97,7 @@ hmlt, body{
   position: fixed;
   bottom: 40px;
   right: 25px;
-  z-index: 100;
+  z-index: 40;
 }
 .icon-style{
   background-color: var(--darker);

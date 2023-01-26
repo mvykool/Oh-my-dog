@@ -6,6 +6,23 @@ const MenuMobile = () => {
 
   const [menu, setMenu] = useState(false)
 
+
+  //lock scrolling when modals are opened 
+
+
+if (typeof window !== "undefined") {
+  let body = window.document.body;
+
+  if (menu === true) {
+    body.classList.add("overflowHidden");
+    body.classList.add("overflowHidden")
+} else if (menu === false) {
+   body.classList.remove("overflowHidden");
+   body.classList.remove("overflowHidden");
+}
+
+}
+
   return (
     <div>
       <button onClick={() => setMenu(true)}>
@@ -14,7 +31,7 @@ const MenuMobile = () => {
      
 
      { menu ? (
-       <MenuModal setMenu={setMenu}/>
+       <MenuModal setMenu={setMenu} menu={menu} />
      ): null}
     </div>
 

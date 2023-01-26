@@ -5,9 +5,10 @@ import {RiHome5Line, RiMapPinLine, RiAccountPinBoxLine, RiEarthLine} from 'react
 
 interface Props{
     setMenu: any
+    menu: any
 }
 
-const MenuModal = ({setMenu}: Props) => {
+const MenuModal = ({setMenu, menu}: Props) => {
 
   return (
     <>
