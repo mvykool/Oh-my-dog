@@ -1,19 +1,45 @@
+<script>
+	const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+	  if(entry.isIntersecting) {
+		 entry.target.classList.add('show');
+		 
+	  }
+   });
+  });
+   
+  const hiddenElements = document.querySelectorAll('.hide');
+  hiddenElements.forEach((item) => observer.observe(item));
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
 <footer class="flex p-2 space-x-2 mt-20">
  <!--block 1 -->
 <div>
-    <div class="flex space-x-2 items-center">
+    <div class="flex space-x-2 items-center hide">
         <img src="/logo.png" alt="logo" class="h-7 w-7 mt-[-10px]">
-        <p class="text-base text-[var(--darker)]">Oh My Dog</p>
+        <p class="text-base text-[var(--darker)] hide">Oh My Dog</p>
     </div>
-    <p class="text-[var(--dark)] text-xs w-36 ml-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur!</p>
+    <p class="text-[var(--dark)] text-xs w-36 ml-4 hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consequatur!</p>
 
 </div>
 
 
 <!--block 2 -->
 <div>
-    <h1 class="text-lg text-[var(--darker)]">Address</h1>
-    <ul class="text-xs text-[var(--dark)] w-20"><li>
+    <h1 class="text-lg text-[var(--darker)] hide">Address</h1>
+    <ul class="text-xs text-[var(--dark)] w-20 hide"><li>
         123 fake street, London, UK
         </li>
         <li>fake@gmail.com</li>
@@ -24,8 +50,8 @@
 <!--block 3 -->
 
 <div>
-    <h1 class="text-lg text-[var(--darker)]">Opening Hours</h1>
-    <ul class="text-xs text-[var(--dark)] w-20 mx-auto"><li>
+    <h1 class="text-lg text-[var(--darker)] hide">Opening Hours</h1>
+    <ul class="text-xs text-[var(--dark)] w-20 mx-auto hide"><li>
         Mon-Tue: 09:00 - 17:00
         </li>
         <li>
@@ -39,11 +65,11 @@
 </footer>
 
 
-<h1 class="text-base text-[var(--darker)] border-t-2 border-[var(--dark)] p-2 mt-5">Subscribe to our Newsletter!</h1>
+<h1 class="text-base text-[var(--darker)] border-t-2 border-[var(--dark)] p-2 mt-5 hide">Subscribe to our Newsletter!</h1>
 
 
 <div class="flex p-5">
-    <input type="text" placeholder="Email" class="w-36 rounded-{-lg p-1">
-<button class="text-xs text-white bg-red-400 rounded-r-lg p-1">Subscribe</button>
+    <input type="text" placeholder="Email" class="w-36 hide rounded-{-lg p-1">
+<button class="text-xs text-white bg-red-400 rounded-r-lg p-1 hide">Subscribe</button>
 
 </div>

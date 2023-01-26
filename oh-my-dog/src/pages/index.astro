@@ -7,21 +7,49 @@ import ScrollTop from '../components/ScrollTop';
 import Layout from '../layouts/Layout.astro';
 ---
 
+<script>
+	const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+	  if(entry.isIntersecting) {
+		 entry.target.classList.add('show');
+		 
+	  }
+   });
+  });
+   
+  const hiddenElements = document.querySelectorAll('.hide');
+  hiddenElements.forEach((item) => observer.observe(item));
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
+
+
 <Layout title="Oh My Dog">
 	<main >
       <!-- hero section -->
         
 	  <section>
 		<div class="flex mx-10 mt-10">
-			<img src="/hero.png" alt="hero" class="w-[90vw] mx-auto h-[50vh]">
+			<img src="/hero.png" alt="hero" class="w-[90vw] mx-auto h-[50vh] hide">
 		</div>
 
-		<div class="flex flex-col mx-8 mt-14">
+		<div class="flex flex-col mx-8 mt-14 hide">
 			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 text-center border-[var(--primary)] border-b-2">For Your Best Friend Care</h1>
 			<p class="my-5 text-sm text-[var(--dark)] text-center mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
 		</div>
 
-		<div class="my-4 flex justify-center space-x-2">
+		<div class="my-4 flex justify-center space-x-2 hide">
 			<button class="bg-red-400 py-2 px-4 rounded-lg text-white">Our services</button>
 			<button class="bg-[var(--dark)] py-2 px-4 rounded-lg text-white">Appointments</button>
 		</div>
@@ -32,8 +60,8 @@ import Layout from '../layouts/Layout.astro';
 
 	  <section id="service" class=" mx-10 relative mb-10 pb-10 flex-col justify-center mt-36 bg-[var(--secondary)] rounded-lg">
 		<div class="flex flex-col">
-			<small class="mx-auto mt-8 mb-2 text-[var(--dark)]">We take care of pets</small>
-			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 text-center ">What Do We Do?</h1>
+			<small class="mx-auto hide mt-8 mb-2 text-[var(--dark)]">We take care of pets</small>
+			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 text-center hide">What Do We Do?</h1>
 		</div>
             
 		 <Cards/>
@@ -44,12 +72,12 @@ import Layout from '../layouts/Layout.astro';
 
 	 <section id="about" class="my-20 flex flex-col justify-center mx-10">
 		<div class="flex flex-col mx-8 mt-14">
-			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2">A Little Bit About Us</h1>
+			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2 hide">About Us</h1>
 			
-			<p class="my-5 text-sm text-[var(--dark)] text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim maiores eos cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum quam tempore blanditiis accusantium laboriosam cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum .</p>
+			<p class="my-5 text-sm text-[var(--dark)] text-center hide">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim maiores eos cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum quam tempore blanditiis accusantium laboriosam cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum .</p>
 		</div>
 
-		<ul class="mt-1 ml-8">
+		<ul class="mt-1 ml-8 hide">
 			<li class="flex space-x-3 my-2">
 				<img src="/logo.png" alt="logo" class="h-5 w-5 rotate-12">
 				<p class=" text-sm text-[var(--dark)]">Lorem, ipsum.</p>
@@ -69,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
 		</ul>
 
 		<div class="flex mx-2 mt-5">
-			<img src="/hero2.png" alt="hero" class="mx-auto">
+			<img src="/hero2.png" alt="hero" class="mx-auto hide">
 		</div>
 
 	 </section>
@@ -78,8 +106,8 @@ import Layout from '../layouts/Layout.astro';
 
 	 <section id="team" class=" mx-10 relative mb-10 pb-10 flex-col justify-center mt-36 bg-[var(--secondary)] rounded-lg">
 		<div class="flex flex-col">
-			<small class="mx-auto mt-8 mb-2 text-[var(--dark)]">Only the best</small>
-			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 text-center ">Our Team</h1>
+			<small class="mx-auto mt-8 mb-2 hide text-[var(--dark)]">Only the best</small>
+			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 text-center hide ">Our Team</h1>
 		</div>
             
 		 <FlipCard/>
@@ -90,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
 	  <!--plans -->
 	  <section id="plans" class=" mx-10 relative mb-10 pb-10 flex-col justify-center mt-36">
 		<div class="flex flex-col">
-			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2">Select One Of Our Plans</h1>
+			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center border-[var(--primary)] border-b-2 hide">Select One Of Our Plans</h1>
 		</div>
             
 		 <Plans/>
@@ -101,17 +129,17 @@ import Layout from '../layouts/Layout.astro';
 	 
 	   <section class=" mx-10 relative mb-10 pb-10 flex-col justify-center bg-[var(--secondary)] rounded-lg">
 		<div class="flex flex-col mx-8">
-			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center mt-8 ">Professional Pet Care</h1>
+			<h1 class="font-bold text-[var(--darker)] text-xl mx-8 text-center mt-8 hide">Professional Pet Care</h1>
 			
-			<p class="my-5 text-sm text-[var(--dark)] text-center ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. repellendus veritatis assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum.</p>
+			<p class="my-5 hide text-sm text-[var(--dark)] text-center ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. repellendus veritatis assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum.</p>
 		</div>
 
-		<div class="flex justify-center mt-4">
+		<div class="flex hide justify-center mt-4">
 			<button class="text-white bg-red-400 rounded-lg p-2">Contact us</button>
 		</div>
 		
 		<div class="flex mx-2 mt-5">
-			<img src="/hero3.png" alt="hero" class="mx-auto">
+			<img src="/hero3.png" alt="hero" class="mx-auto hide">
 		</div>
 
 

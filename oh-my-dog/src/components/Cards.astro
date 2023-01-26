@@ -1,6 +1,33 @@
+<script>
+	const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+	  if(entry.isIntersecting) {
+		 entry.target.classList.add('show');
+		 
+	  }
+   });
+  });
+   
+  const hiddenElements = document.querySelectorAll('.hide');
+  hiddenElements.forEach((item) => observer.observe(item));
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
+
 
     <!--card 1 -->
-    <div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center">
+    <div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center hide">
         <img src="/gromming.png" alt="gromming" class="h-16 w-16 p-2 rounded-full bg-blue-400 mx-auto my-5">
 
         <h3 class="text-lg text-[var(--darker)] font-semibold mx-auto">Pet Grooming</h3>
@@ -9,7 +36,7 @@
     </div>
 
   <!--card 2 -->
-  <div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center">
+  <div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center hide">
     <img src="/vet.png" alt="gromming" class="h-16 w-16 p-2 rounded-full bg-red-400 mx-auto my-5">
 
     <h3 class="text-lg text-[var(--darker)] font-semibold mx-auto">Veterinary</h3>
@@ -17,7 +44,7 @@
     <p class="text-xs my-3 text-[var(--dark)] mx-8 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quidem?</p>
 </div>
 <!--card 3-->
-<div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center">
+<div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center hide">
   <img src="/food.png" alt="gromming" class="h-16 w-16 p-2 rounded-full bg-purple-400 mx-auto my-5">
 
   <h3 class="text-lg text-[var(--darker)] font-semibold mx-auto">Food & Snacks</h3>
@@ -25,7 +52,7 @@
   <p class="text-xs my-3 text-[var(--dark)] mx-8 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, quidem?</p>
 </div>
   <!--card 4-->
-<div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center">
+<div class="bg-[var(--main)] w-[50vw] mx-auto  my-5 rounded-lg flex flex-col justify-center hide">
   <img src="/toys.png" alt="gromming" class="h-16 w-16 p-2 rounded-full bg-orange-400 mx-auto my-5">
 
   <h3 class="text-lg text-[var(--darker)] font-semibold mx-auto">Toys</h3>

@@ -1,6 +1,33 @@
+<script>
+	const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+	  if(entry.isIntersecting) {
+		 entry.target.classList.add('show');
+		 
+	  }
+   });
+  });
+   
+  const hiddenElements = document.querySelectorAll('.hide');
+  hiddenElements.forEach((item) => observer.observe(item));
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
+
 <!--plan 1 -->
 
-<div class="bg-[var(--primary)] mt-10 rounded-lg">
+<div class="bg-[var(--primary)] mt-10 rounded-lg hide">
     <div class="flex justify-center">
         <h2 class="my-5 text-lg text-[var(--dark)] font-semibold">Regular Plan</h2>
     </div>
@@ -26,7 +53,7 @@
 
 <!--plan 2 -->
 
-<div class="bg-red-400 mt-10 rounded-lg">
+<div class="bg-red-400 mt-10 rounded-lg hide">
     <div class="flex justify-center">
         <h2 class="my-5 text-lg text-[var(--main)] font-semibold">Premium Plan</h2>
     </div>
@@ -55,7 +82,7 @@
 
 <!--plan 3 -->
 
-<div class="bg-[var(--darker)] mt-10 rounded-lg">
+<div class="bg-[var(--darker)] mt-10 rounded-lg hide">
     <div class="flex justify-center">
         <h2 class="my-5 text-lg text-[var(--main)] font-semibold">Golden Plan</h2>
     </div>

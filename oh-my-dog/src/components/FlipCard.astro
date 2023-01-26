@@ -1,7 +1,33 @@
+<script>
+	const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+	  if(entry.isIntersecting) {
+		 entry.target.classList.add('show');
+		 
+	  }
+   });
+  });
+   
+  const hiddenElements = document.querySelectorAll('.hide');
+  hiddenElements.forEach((item) => observer.observe(item));
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
 
 <!-- card 1 -->
 
-<div class="flip-card">
+<div class="flip-card hide">
     <div class="flip-card-inner">
       <div class="flip-card-front bg-[var(--main)] rounded-lg ">
         <img src="vet1.jpg" alt="Avatar" class="w-[90%] h-[60%] flex justify-center mx-auto rounded-lg mt-5">
@@ -20,7 +46,7 @@
 
   <!-- card 2 -->
 
-<div class="flip-card">
+<div class="flip-card hide">
   <div class="flip-card-inner">
     <div class="flip-card-front bg-[var(--main)] rounded-lg ">
       <img src="vet2.jpg" alt="Avatar" class="w-[90%] h-[60%] flex justify-center mx-auto rounded-lg mt-5">
@@ -38,7 +64,7 @@
 
   <!-- card 3 -->
 
-  <div class="flip-card">
+  <div class="flip-card hide">
     <div class="flip-card-inner">
       <div class="flip-card-front bg-[var(--main)] rounded-lg ">
         <img src="groomer.jpg" alt="Avatar" class="w-[90%] h-[60%] flex justify-center mx-auto rounded-lg mt-5">
@@ -56,7 +82,7 @@
 
     <!-- card 4 -->
 
-    <div class="flip-card">
+    <div class="flip-card hide">
       <div class="flip-card-inner">
         <div class="flip-card-front bg-[var(--main)] rounded-lg ">
           <img src="groomer2.jpg" alt="Avatar" class="w-[90%] h-[60%] flex justify-center mx-auto rounded-lg mt-5">
