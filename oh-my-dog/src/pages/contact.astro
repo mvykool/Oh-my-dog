@@ -33,21 +33,18 @@ import Layout from "../layouts/Layout.astro"
         <section>
           <div class="flex mx-10 mt-10">
             <Goback client:load/>
-              <img src="/hero.png" alt="hero" class=" mx-auto h-[20vh] hide">
+              <img src="/hero.png" alt="hero" class=" mx-auto h-[20vh] hide lg:mt-10">
           </div>
   
           <div class="flex flex-col mx-8 mt-14 hide">
-              <h1 class="font-bold text-[var(--darker)] text-2xl mx-8 text-center border-[var(--primary)] border-b-2">Contact us</h1>
+              <h1 class="font-bold text-[var(--darker)] text-2x md:text-4xl mx-8 text-center border-[var(--primary)] border-b-2">Contact us</h1>
           </div>
   
          
         </section>
-  
-      </main>
-    
- 
-<section class="bg-[var(--app-col)] p-10 flex justify-center md:w-[70vw] md:mx-auto">
-    <form  class='md:absolute relative md:top-20 flex flex-col justify-center p-3 md:w-[35vw] hide'>
+
+        <section class="bg-[var(--app-col)] p-10 flex justify-center md:w-[70vw] md:mx-auto">
+    <form  class=' relative md:top-5 flex flex-col justify-center p-3 md:w-[35vw] hide'>
         <label class=' w-20 font-semibold rounded-md flex my-4 text-[var(--dark)]'>Name</label>
         <input
         type="text"
@@ -70,7 +67,12 @@ import Layout from "../layouts/Layout.astro"
         id='message'
         placeholder='Message' 
         class='px-2 pt-2 pb-36 rounded-md outline-none'/>
-        <button class='my-5 rounded-md cursor-pointer bg-[var(--dark)] text-white font-bold p-1 hover:bg-gray-800 hover:scale-105 duration-300' type='submit'  value='send'>Submit</button>
+        <button class='my-5 rounded-md cursor-pointer bg-[var(--dark)] text-white font-bold p-1 hover:bg-[var(--darker)] hover:scale-105 duration-300' type='submit'  value='send'>Submit</button>
     </form>
     </section>
+  
+      </main>
+    
+ 
+
 </Layout>
