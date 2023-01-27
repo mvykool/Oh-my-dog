@@ -3,6 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/*scroll bar*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: white;
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--dark); 
+  border-radius: 10px;
+  border: 1px white solid;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darker); 
+  border: 1px white solid;
+}
+
+.overflowHidden {
+  overflow: hidden;
+  margin: 0;
+  touch-action: none;
+  -ms-touch-action: none;
+  height: 100%;
+}
+
 /*color palette*/
 
 
