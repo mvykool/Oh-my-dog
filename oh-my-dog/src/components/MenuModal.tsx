@@ -42,7 +42,7 @@ const MenuModal = ({setMenu, menu}: Props) => {
 			   </li>
          <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a className=" text-base font-semibold text-[var(--dark)]">Contact us</a>
+				 <a href={"/contact"} className=" text-base font-semibold text-[var(--dark)]">Contact us</a>
 			   </li>
 		
 		</ul>
