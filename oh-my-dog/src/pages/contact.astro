@@ -4,7 +4,28 @@ import Layout from "../layouts/Layout.astro"
 
 ---
 
+<script>
+
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+</script>
+
+
 <Layout title="Oh My Dog | Contact">
+
+  <!--loader -->
+
+<div class="loader"></div>
 
     <main >
         <!-- hero section -->

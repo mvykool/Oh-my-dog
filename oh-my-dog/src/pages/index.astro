@@ -7,17 +7,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <script>
-	const observer = new IntersectionObserver((entries) => {
-   entries.forEach((entry) => {
-	  if(entry.isIntersecting) {
-		 entry.target.classList.add('show');
-		 
-	  }
-   });
-  });
-   
-  const hiddenElements = document.querySelectorAll('.hide');
-  hiddenElements.forEach((item) => observer.observe(item));
+
   //loading
   window.addEventListener("load", () => {
   const loader = document.querySelector(".loader") as HTMLElement;
@@ -35,6 +25,11 @@ import Layout from '../layouts/Layout.astro';
 
 
 <Layout title="Oh My Dog">
+
+	<!--loader -->
+
+<div class="loader"></div>
+
 	<main >
       <!-- hero section -->
         
