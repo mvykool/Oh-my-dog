@@ -1,0 +1,1 @@
+import"./Footer.astro_astro_type_script_index_0_lang.39d87e27.js";window.addEventListener("load",()=>{const d=document.querySelector(".loader");d.classList.add("loader-hidden"),d.addEventListener("transitionend",()=>{d&&document.body.removeChild(d)})});

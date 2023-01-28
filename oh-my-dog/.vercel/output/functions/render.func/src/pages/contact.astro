@@ -1,0 +1,78 @@
+---
+import Goback from "../components/Goback";
+import Layout from "../layouts/Layout.astro"
+
+---
+
+<script>
+
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+</script>
+
+
+<Layout title="Oh My Dog | Contact">
+
+  <!--loader -->
+
+<div class="loader"></div>
+
+    <main >
+        <!-- hero section -->
+          
+        <section>
+          <div class="flex mx-10 mt-10">
+            <Goback client:load/>
+              <img src="/hero.png" alt="hero" class=" mx-auto h-[20vh] hide lg:mt-10">
+          </div>
+  
+          <div class="flex flex-col mx-8 mt-14 hide">
+              <h1 class="font-bold text-[var(--darker)] text-2x md:text-4xl mx-8 text-center border-[var(--primary)] border-b-2">Contact us</h1>
+          </div>
+  
+         
+        </section>
+
+        <section class="bg-[var(--app-col)] p-10 flex justify-center md:w-[70vw] md:mx-auto">
+    <form  class=' relative md:top-5 flex flex-col justify-center p-3 md:w-[35vw] hide'>
+        <label class=' w-20 font-semibold rounded-md flex my-4 text-[var(--dark)]'>Name</label>
+        <input
+        type="text"
+        name='name'
+        id='name'
+        placeholder='Your Name'
+        class='p-2 rounded-md outline-none'/>
+        <label class=' w-20 font-semibold rounded-md flex  my-4 text-[var(--dark)]'>Email</label>
+        <input
+        type="text"
+       
+        name='email'
+        id='email'
+        placeholder='Email Address'
+        class='p-2 rounded-md outline-none'/>
+        <label class=' w-20 font-semibold rounded-md flex p-1 my-4 text-[var(--dark)]'>Message</label>
+        <input
+        type="text"
+        name='message'
+        id='message'
+        placeholder='Message' 
+        class='px-2 pt-2 pb-36 rounded-md outline-none'/>
+        <button class='my-5 rounded-md cursor-pointer bg-[var(--dark)] text-white font-bold p-1 hover:bg-[var(--darker)] hover:scale-105 duration-300' type='submit'  value='send'>Submit</button>
+    </form>
+    </section>
+  
+      </main>
+    
+ 
+
+</Layout>

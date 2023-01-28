@@ -1,0 +1,158 @@
+---
+import Cards from '../components/Cards.astro';
+import FlipCard from '../components/FlipCard.astro';
+import Plans from '../components/Plans.astro';
+import ScrollTop from '../components/ScrollTop';
+import Layout from '../layouts/Layout.astro';
+---
+
+<script>
+
+  //loading
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader") as HTMLElement;
+  loader.classList.add("loader-hidden");
+  loader.addEventListener("transitionend", () => {
+	if(loader){
+	 
+	  document.body.removeChild(loader);
+	
+  }
+  });
+  });
+  </script>
+
+
+
+<Layout title="Oh My Dog">
+
+	<!--loader -->
+
+<div class="loader"></div>
+
+	<main >
+      <!-- hero section -->
+        
+	  <section class="block lg:flex lg:flex-row-reverse lg:mt-16 lg:justify-center lg:mx-auto">
+
+		<!--main img -->
+		<div class="flex mx-10 mt-10 lg:mt-1">
+			<img src="/hero.png" alt="hero" class="w-[80vw] lg:w-auto mx-auto h-[50vh] hide">
+		</div>
+
+		<!--main text -->
+		<div class="lg:mt-10">
+
+		<div class="flex flex-col mx-8 mt-14 hide">
+			<h1 class="font-bold text-[var(--darker)] text-2xl lg:text-4xl mx-8 text-center border-[var(--primary)] border-b-2">For Your Best Friend Care</h1>
+			<p class="my-5 text-sm text-[var(--dark)] text-center mx-4 lg:w-[30vw]">Lorem ipsum dolor sit amet consectetur adipisicing elit.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, cumque.</p>
+		</div>
+
+		<div class="my-4 flex justify-center space-x-2 hide">
+			<button class="bg-red-400 py-2 px-4 rounded-lg text-white lg:px-2 lg:text-sm lg:hover:bg-red-600 hover:scale-110 duration-200">Our services</button>
+			<button class="bg-[var(--dark)] py-2 px-4 rounded-lg text-white lg:px-2 lg:text-sm lg:hover:bg-[var(--darker)] hover:scale-110 duration-200">Appointments</button>
+		</div>
+		</div>
+	  </section>
+
+	</main>
+	  <!-- services section -->
+
+	  <section id="service" class=" mx-10 lg:mx-[15%] relative mb-10 pb-10 flex-col justify-center mt-36 bg-[var(--secondary)] rounded-lg">
+		<div class="flex flex-col">
+			<small class="mx-auto hide mt-8 mb-2 text-[var(--dark)]">We take care of pets</small>
+			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 text-center hide">What Do We Do?</h1>
+		</div>
+            
+		 <Cards/>
+		 
+	  </section>
+
+     <!--about section -->
+
+	 <section id="about" class="my-20 flex flex-col justify-center mx-10 lg:flex lg:flex-row lg:mt-20 lg:justify-center lg:mx-auto">
+	
+		<div>
+			<div class="flex flex-col mx-8 mt-14">
+				<h1 class="font-bold text-[var(--darker)] text-xl lg:text-2xl mx-8 text-center border-[var(--primary)] border-b-2 hide">About Us</h1>
+				
+				<p class="my-5 text-sm text-[var(--dark)] text-center hide lg:w-[30vw]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim maiores eos cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum quam tempore blanditiis accusantium laboriosam cumque assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum .</p>
+			</div>
+	
+			<ul class="mt-1 ml-8 hide">
+				<li class="flex space-x-3 my-2">
+					<img src="/logo.png" alt="logo" class="h-5 w-5 rotate-12">
+					<p class=" text-sm text-[var(--dark)]">Lorem, ipsum.</p>
+				</li>
+				<li class="flex space-x-3 my-2">
+					<img src="/logo.png" alt="logo" class="h-5 w-5 rotate-12">
+					<p class=" text-sm text-[var(--dark)]">veritatis voluptatum</p>
+				</li>
+				<li class="flex space-x-3 my-2">
+					<img src="/logo.png" alt="logo" class="h-5 w-5 rotate-12">
+					<p class=" text-sm text-[var(--dark)]">laborum quam tempore</p>
+				</li>
+				<li class="flex space-x-3 my-2">
+					<img src="/logo.png" alt="logo" class="h-5 w-5 rotate-12">
+					<p class=" text-sm text-[var(--dark)]">consectetur</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="flex mx-2 mt-5">
+			<img src="/hero2.png" alt="hero" class="mx-auto lg:w-[25vw] hide">
+		</div>
+
+	 </section>
+
+	 <!-- staff section -->
+
+	 <section id="team" class=" mx-10 lg:mx-[15%]  relative mb-10 pb-10 lg:pb-1 flex-col justify-center mt-36 bg-[var(--secondary)] rounded-lg">
+		<div class="flex flex-col">
+			<small class="mx-auto mt-8 mb-2 hide text-[var(--dark)]">Only the best</small>
+			<h1 class="font-bold text-[var(--darker)] text-2xl mx-8 mb-4 lg:mb-1 text-center hide ">Our Team</h1>
+		</div>
+            
+		 <FlipCard/>
+		 
+	  </section>
+
+
+	  <!--plans -->
+	  <section id="plans" class=" mx-10 lg:mx-[15%]  relative mb-10 pb-10 flex-col justify-center mt-36">
+		<div class="flex flex-col">
+			<h1 class="font-bold text-[var(--darker)] text-xl lg:text-2xl mx-8 text-center border-[var(--primary)] border-b-2 hide">Select One Of Our Plans</h1>
+		</div>
+            
+		 <Plans/>
+		 
+	  </section>
+
+	   <!--contact -->
+	 
+	   <section class=" mx-10 lg:mx-[15%] lg:flex lg:flex-row relative mb-10 pb-10 flex-col justify-center bg-[var(--secondary)] rounded-lg">
+		<div class="mt-10">
+			<div class="flex flex-col mx-8">
+				<h1 class="font-bold text-[var(--darker)] text-xl lg:text-2xl mx-8 text-center mt-8 hide">Professional Pet Care</h1>
+				
+				<p class="my-5 hide text-sm text-[var(--dark)] lg:w-[30vw] text-center lg:text-left ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. repellendus veritatis assumenda dolorum ut repellendus veritatis voluptatum facere quis, laborum.</p>
+			</div>
+	
+			<div class="flex hide justify-center lg:justify-start lg:ml-10 mt-4">
+				<a href="/contact" class="text-white bg-red-400 rounded-lg p-2 hover:scale-110 hover:bg-red-600 duration-200">Contact us</a>
+			</div>
+		</div>
+		
+		<div class="flex mx-2 mt-5">
+			<img src="/hero3.png" alt="hero" class="mx-auto md:w-[25vw] hide">
+		</div>
+
+
+	  </section>
+
+	  <ScrollTop client:load/>
+
+	
+	  
+</Layout>
+
