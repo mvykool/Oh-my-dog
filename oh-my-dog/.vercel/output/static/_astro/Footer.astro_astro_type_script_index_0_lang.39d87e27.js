@@ -1,1 +1,0 @@
-const o=new IntersectionObserver(e=>{e.forEach(d=>{d.isIntersecting&&d.target.classList.add("show")})}),t=document.querySelectorAll(".hide");t.forEach(e=>o.observe(e));window.addEventListener("load",()=>{const e=document.querySelector(".loader");e.classList.add("loader-hidden"),e.addEventListener("transitionend",()=>{e&&document.body.removeChild(e)})});
