@@ -26,23 +26,23 @@ const MenuModal = ({setMenu, menu}: Props) => {
     <ul className="mt-1 ml-8">
 			   <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a href={"/#service"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Services</a>
+				 <a href={"/oh-my-dog/#service"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Services</a>
 			   </li>
          <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a href={"/#about"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">About us</a>
+				 <a href={"/oh-my-dog/#about"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">About us</a>
 			   </li>
          <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a href={"/#team"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Team</a>
+				 <a href={"/oh-my-dog/#team"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Team</a>
 			   </li>
          <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a href={"/#plans"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Prices</a>
+				 <a href={"/oh-my-dog/#plans"} onClick={() => setMenu(false)}  className=" text-base font-semibold text-[var(--dark)]">Prices</a>
 			   </li>
          <li className="flex space-x-2 my-4">
 				  <img src="/logo.png" alt="logo" className="h-5 w-5 rotate-12"/>
-				 <a href={"/contact"} className=" text-base font-semibold text-[var(--dark)]">Contact us</a>
+				 <a href={"/oh-my-dog/contact"} className=" text-base font-semibold text-[var(--dark)]">Contact us</a>
 			   </li>
 		
 		</ul>
